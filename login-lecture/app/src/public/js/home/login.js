@@ -1,5 +1,11 @@
 'use strict';
 
-console.log("hello");
+const id = document.querySelector("#id"),
+      pssword = document.querySelector("#psword"),
+      loginbtn = document.querySelector("button");
 
-console.log("bye");
+loginbtn.addEventListener('click',login);
+
+function login(){
+  console.log("bye");
+}

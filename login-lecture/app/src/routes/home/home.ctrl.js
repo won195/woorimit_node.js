@@ -10,6 +10,11 @@ const output = {
   },
 };
 
+const users = {
+  id: ['wdwd','123123','123'],
+  psword: ['123','123','123'],
+};
+
 const process = {
   login: (req, res) => {
     const id = req.body.id,
@@ -17,7 +22,7 @@ const process = {
       
     if (users.id.includes(id)){
       const idx = users.id.indexOf(id);
-      if (users.pswod[idx] === psword) {
+      if (users.psword[idx] === psword) {
         return res.json({
           success: true,
         });
@@ -26,7 +31,7 @@ const process = {
     
     return res.json({
       success: false,
-      msg: '로그인에 실패하셧습니다.',
+      msg: '로그인에 실패하셧습니다.', 
     });
   },
 };

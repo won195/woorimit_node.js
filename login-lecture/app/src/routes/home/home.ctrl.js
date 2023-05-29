@@ -1,6 +1,6 @@
 'use strict';
 
-const User = require('../../models/User');
+const Users = require('../../models/User');
 
 const output = {
   home: (req,res)=>{
@@ -16,7 +16,7 @@ const output = {
 
 const process = {
   login: (req, res) => {
-    const user = new User(req.body);
+    const user = new Users(req.body);
     const response = user.login();
     return res.json(response);
   },

@@ -1,8 +1,8 @@
 'use strict';
 
 const id = document.querySelector("#id"),
-      name = cument.querySelector("#name"),
-      pssword = document.querySelector("#psword"),
+      name = dcument.querySelector("#name"),
+      psword = document.querySelector("#psword"),
       confirmPsword = document.querySelector("#confirm-psword"),
       registerbtn = document.querySelector("#button");
 
@@ -10,7 +10,7 @@ registerbtn.addEventListener('click',register);
 
 function register(){
   if (!id.value) return alert('아이디를 입력해주십시오');
-  if (pssword.value !== confirmPsword.value) return alert('비밀번호가 일치하지 않습니다');
+  if (psword.value !== confirmPsword.value) return alert('비밀번호가 일치하지 않습니다');
 
 
   const req = {
@@ -30,8 +30,9 @@ function register(){
     .then((res) => res.json())
     .then((res) => {
       if (res.success) {
-        location.href = '/login';
+        location.href = "/login";
       } else {
+        if (res.err) return alert(res.err);
         alert(res.msg);
       }
     })
